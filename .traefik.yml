@@ -1,12 +1,10 @@
-displayName: Demo Plugin
+displayName: Wss Header Rename Plugin
 type: middleware
 iconPath: .assets/icon.png
 
-import: github.com/traefik/plugindemo
+import: github.com/yanzongzhen/ws-header-rewrite
 
-summary: '[Demo] Add Request Header'
+summary: '[Ws] Rename Sec-Websocket-* to Sec-WebSocket-*'
 
 testData:
-  Headers:
-    X-Demo: test
-    X-URL: '{{URL}}'
+  enable: true

@@ -39,8 +39,8 @@ The following declaration (given here in YAML) defines a plugin:
 experimental:
   plugins:
     example:
-      moduleName: github.com/traefik/plugindemo
-      version: v0.2.1
+      moduleName: github.com/yanzongzhen/ws-header-rewrite
+      version: v0.0.1
 ```
 
 Here is an example of a file provider dynamic configuration (given here in YAML), where the interesting part is the `http.middlewares` section:
@@ -67,9 +67,8 @@ http:
   middlewares:
     my-plugin:
       plugin:
-        example:
-          headers:
-            Foo: Bar
+        ws-header-rewrite:
+          enabled: true
 ```
 
 ### Local Mode
@@ -101,7 +100,7 @@ The source code of the plugin should be organized as follows:
 experimental:
   localPlugins:
     example:
-      moduleName: github.com/traefik/plugindemo
+      moduleName: github.com/yanzongzhen/ws-header-rewrite
 ```
 
 (In the above example, the `plugindemo` plugin will be loaded from the path `./plugins-local/src/github.com/traefik/plugindemo`.)
@@ -128,9 +127,8 @@ http:
   middlewares:
     my-plugin:
       plugin:
-        example:
-          headers:
-            Foo: Bar
+        ws-header-rewrite:
+          enabled: true
 ```
 
 ## Defining a Plugin
